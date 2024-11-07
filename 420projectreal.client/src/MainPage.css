@@ -1,0 +1,156 @@
+/* Reset and base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.main-page {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Full-width background colors for sections */
+.header-section {
+    width: 100vw;
+    margin-left: calc(50% - 50vw); /* Center align the full-width section */
+    padding: 4rem 0; /* Increase padding to ensure it covers the space */
+    text-align: center;
+    background-color: #edefeb;
+    margin-top: -80px; /* Increase negative margin to push it further behind the navbar */
+   
+}
+
+.header-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 80px; /* Increase padding to avoid overlap with the navbar */
+}
+
+
+.main-title {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.start-btn {
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+}
+
+    .start-btn:hover {
+        background-color: black;
+        color: white;
+        transition: all 0.2s ease-in-out;
+    }
+
+/* Features Section Styling */
+.features-section {
+    width: 100vw;
+    margin-left: calc(50% - 50vw); /* Center align the full-width section */
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: white;
+    text-align: center;
+    position: relative;
+
+}
+
+.feature-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    max-width: 200px;
+    text-align: center;
+}
+
+/* Footer Section Styling */
+.footer-section {
+    width: 100vw;
+    margin-left: calc(50% - 50vw); /* Center align the full-width section */
+    padding: 3rem 0;
+    background-color: #fff7e4;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four cards in a row */
+    gap: 1rem;
+    max-width: 900px;
+    justify-content: center;
+}
+
+.footer-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+}
+
+
+.footer-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Icon styling for feature section */
+.feature-icon {
+    font-size: 2rem;
+    color: #007bff; /* Adjust the color to match your theme */
+    margin-bottom: 1rem;
+}
+
+.footer-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    transition: background-color 0.3s ease; /* Optional for hover effect */
+}
+
+    .footer-btn:hover {
+        background-color: #333; /* Dark gray on hover for visual feedback */
+    }
+
+/* You can remove the specific classes if both buttons share the same style, 
+   or keep separate ones if you wish to have individual button designs in the future */
