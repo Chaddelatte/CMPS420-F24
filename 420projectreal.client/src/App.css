@@ -1,0 +1,72 @@
+﻿/* Ensure the navbar spans the full width, is centered, and has an oval shape */
+.app-container {
+    padding-top: 1rem; /* Space at the top */
+    background-color: #edefeb;
+}
+
+.custom-navbar {
+    background-color: #fdf8f3;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    padding: .8rem 2rem;
+    max-width: 90%;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.navbar-logo .logo-img {
+    height: 2.5rem;
+}
+
+.navbar-caption {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #000;
+}
+
+.navbar-nav .nav-link {
+    color: #000;
+    font-size: 1.1rem;
+    margin-right: 1rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: darkslategrey;
+        transform: scale(1.1);
+    }
+
+
+.icons-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.iconfont-wrapper {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.btn-primary {
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    background-color: #407bbf;
+}
+
+    .btn-primary:hover {
+        background-color: white;
+        color: #407bbf;
+        transition: all 0.2s ease-in-out;
+    }
+
+@media (max-width: 768px) {
+    .custom-navbar {
+        flex-direction: column;
+    }
+}
