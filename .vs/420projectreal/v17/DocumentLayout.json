@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "T:\\CMPS420\\CMPS420-F24\\Repo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7707DEFB-3349-4B03-85BF-74F6778A58A8}|420projectreal.client\\420projectreal.client.esproj|t:\\cmps420\\cmps420-f24\\repo\\420projectreal.client\\src\\routes\\generator\\generator.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{7707DEFB-3349-4B03-85BF-74F6778A58A8}|420projectreal.client\\420projectreal.client.esproj|solutionrelative:420projectreal.client\\src\\routes\\generator\\generator.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7707DEFB-3349-4B03-85BF-74F6778A58A8}|420projectreal.client\\420projectreal.client.esproj|t:\\cmps420\\cmps420-f24\\repo\\420projectreal.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{7707DEFB-3349-4B03-85BF-74F6778A58A8}|420projectreal.client\\420projectreal.client.esproj|solutionrelative:420projectreal.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7707DEFB-3349-4B03-85BF-74F6778A58A8}|420projectreal.client\\420projectreal.client.esproj|t:\\cmps420\\cmps420-f24\\repo\\420projectreal.client\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{7707DEFB-3349-4B03-85BF-74F6778A58A8}|420projectreal.client\\420projectreal.client.esproj|solutionrelative:420projectreal.client\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7707DEFB-3349-4B03-85BF-74F6778A58A8}|420projectreal.client\\420projectreal.client.esproj|t:\\cmps420\\cmps420-f24\\repo\\420projectreal.client\\src\\routes\\generator\\generator.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{7707DEFB-3349-4B03-85BF-74F6778A58A8}|420projectreal.client\\420projectreal.client.esproj|solutionrelative:420projectreal.client\\src\\routes\\generator\\generator.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7707DEFB-3349-4B03-85BF-74F6778A58A8}|420projectreal.client\\420projectreal.client.esproj|t:\\cmps420\\cmps420-f24\\repo\\420projectreal.client\\src\\index.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
@@ -30,36 +34,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": ".gitignore",
+              "DocumentMoniker": "T:\\CMPS420\\CMPS420-F24\\Repo\\420projectreal.client\\.gitignore",
+              "RelativeDocumentMoniker": "420projectreal.client\\.gitignore",
+              "ToolTip": "T:\\CMPS420\\CMPS420-F24\\Repo\\420projectreal.client\\.gitignore",
+              "RelativeToolTip": "420projectreal.client\\.gitignore",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-12T19:46:56.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Generator.tsx",
               "DocumentMoniker": "T:\\CMPS420\\CMPS420-F24\\Repo\\420projectreal.client\\src\\Routes\\Generator\\Generator.tsx",
               "RelativeDocumentMoniker": "420projectreal.client\\src\\Routes\\Generator\\Generator.tsx",
               "ToolTip": "T:\\CMPS420\\CMPS420-F24\\Repo\\420projectreal.client\\src\\Routes\\Generator\\Generator.tsx",
               "RelativeToolTip": "420projectreal.client\\src\\Routes\\Generator\\Generator.tsx",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAADgAAAAaAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACkAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-11T19:28:16.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T19:28:16.481Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "App.tsx",
               "DocumentMoniker": "T:\\CMPS420\\CMPS420-F24\\Repo\\420projectreal.client\\src\\App.tsx",
               "RelativeDocumentMoniker": "420projectreal.client\\src\\App.tsx",
               "ToolTip": "T:\\CMPS420\\CMPS420-F24\\Repo\\420projectreal.client\\src\\App.tsx",
               "RelativeToolTip": "420projectreal.client\\src\\App.tsx",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAC4AAABZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-11T19:28:02.066Z"
+              "WhenOpened": "2024-11-11T19:28:02.066Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "index.tsx",
               "DocumentMoniker": "T:\\CMPS420\\CMPS420-F24\\Repo\\420projectreal.client\\src\\index.tsx",
               "RelativeDocumentMoniker": "420projectreal.client\\src\\index.tsx",
@@ -71,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "routes.tsx",
               "DocumentMoniker": "T:\\CMPS420\\CMPS420-F24\\Repo\\420projectreal.client\\src\\routes.tsx",
               "RelativeDocumentMoniker": "420projectreal.client\\src\\routes.tsx",
@@ -83,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MainPage.tsx",
               "DocumentMoniker": "T:\\CMPS420\\CMPS420-F24\\Repo\\420projectreal.client\\src\\MainPage.tsx",
               "RelativeDocumentMoniker": "420projectreal.client\\src\\MainPage.tsx",

@@ -17,13 +17,11 @@
 
 
   /* 3 */
-  body, h1, .BoxDiv {
+  body, h1  {
     background-color: var(--background-color);
     color: var(--font-color);
 
   }
-
-
   
   a {
     color: var(--link-color);
@@ -74,4 +72,20 @@
     position: absolute;
     transition: 0.4s;
     width: 26px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  input:checked + .slider {
+    background-color: cornflowerblue;
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
   }

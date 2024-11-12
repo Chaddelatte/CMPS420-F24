@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaLightbulb, FaChartLine, FaComments } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { Tooltip } from 'react-tooltip';
 
 const MainPage: React.FC = () => {
     return (
@@ -21,12 +22,19 @@ const MainPage: React.FC = () => {
                     alignItems: 'center',
                 }}
             >
-                <div style={{ maxWidth: '600px', paddingTop: '80px' }}>
+                <div style={{ maxWidth: '600px', paddingTop: '80px' }}
+                
+                
+                
+                >
                     <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', fontWeight: 'bold' }}>
                         Where You Get Into The Director's Seat
                     </h1>
                     <Link to="./generate">
                     <button
+                        data-tooltip-id="generate"
+                        data-tooltip-content="Click to get started"
+                        data-tooltip-place="top"
                         className="btn btn-primary"
                         style={{
                             fontWeight: 'bold',
@@ -49,6 +57,7 @@ const MainPage: React.FC = () => {
 
                     
                 </div>
+                <Tooltip id="generate"/>
             </section>
 
             {/* Features Section */}
@@ -60,7 +69,7 @@ const MainPage: React.FC = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     gap: '2rem',
-                    /*backgroundColor: 'white',*/
+                    backgroundColor: 'cornflowerblue',
                     textAlign: 'center',
                     position: 'relative',
                     flex: '1',
@@ -80,7 +89,7 @@ const MainPage: React.FC = () => {
                             textAlign: 'center',
                         }}
                     >
-                        <Icon style={{ fontSize: '2rem', color: '#007bff', marginBottom: '1rem' }} />
+                        {/* <Icon style={{ fontSize: '2rem', color: '#007bff', marginBottom: '1rem' }} /> */}
                         <h5 style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{title}</h5>
                         <p style={{ fontSize: '0.9rem', color: '#666' }}>{description}</p>
                     </div>
@@ -94,7 +103,7 @@ const MainPage: React.FC = () => {
                     marginLeft: 'calc(50% - 50vw)',
                     padding: '3rem 0',
                     
-                    backgroundColor: '#fff7e4',
+                    //backgroundColor: '#fff7e4',
                     textAlign: 'center',
                     display: 'flex',
                     flexDirection: 'column',
@@ -116,7 +125,7 @@ const MainPage: React.FC = () => {
                         className='BoxDiv'    
                         key={index}
                             style={{
-                                //backgroundColor: '#fff',
+                                backgroundColor: '#fff',
                                 borderRadius: '10px',
                                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                                 padding: '1rem',

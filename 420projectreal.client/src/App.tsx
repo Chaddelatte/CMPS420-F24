@@ -8,21 +8,28 @@ import Generator from './Routes/Generator/Generator';
 import Results from './Routes/Results/Results';
 import image from './assets/Images/movie.png';
 import DarkMode from "./DarkMode";
-
+import { Tooltip } from 'react-tooltip';
 
 const App: React.FC = () => {
     return (
         
         <div className="app-container">
-            <DarkMode />
+            
             <nav className="navbar custom-navbar">
                 <div className="container-fluid d-flex align-items-center justify-content-between">
                     {/* Left-aligned logo and title */}
                     <div className="d-flex align-items-center">
-                        <a href="/" className="navbar-logo me-2">
-                            <img src={image} alt="Logo" className="logo-img" />
+                        <a 
+                            data-tooltip-id="gohome"
+                            data-tooltip-content="Click to start over"
+                            data-tooltip-place="top"
+                        
+                            href="/" className="navbar-logo me-2">
+                                <img src={image} alt="Logo" className="logo-img" />
+                            
                         </a>
-                        <span className="navbar-caption">MovieStuff</span>
+                        <Tooltip id="gohome" />
+                        <span className="navbar-caption nav-item px-3"> Elevator Pitch</span>
                     </div>
 
                     {/* Centered navigation links */}
@@ -52,14 +59,38 @@ const App: React.FC = () => {
                         <Link to="/generate" className="btn btn-primary">Generate</Link> */}
 
                     <ul className="navbar-nav mx-auto d-flex flex-row">
-                        <li className="nav-item px-3">
-                            <Link className="nav-link" to="/">Home</Link>
+                        
+                        <li className="nav-item px-3"
+                            data-tooltip-id="home"
+                            data-tooltip-content="Click to go home"
+                            data-tooltip-place="top">
+
+                            <Link className="nav-link" to="/" >Home</Link>
+                            <Tooltip id="home" />
                         </li>
-                        <li className="nav-item px-3">
+                        <li className="nav-item px-3"
+                        data-tooltip-id="results"
+                        data-tooltip-content="Click to see previous results"
+                        data-tooltip-place="top">
                             <Link className="nav-link" to="/results">Results</Link>
+                            <Tooltip id="results" />
                         </li>
-                        <li className="nav-item px-3">
+                        <li className="nav-item px-3" 
+                            data-tooltip-id="support"
+                            data-tooltip-content="Click here for assistance"
+                            data-tooltip-place="top">
                             <Link className="nav-link" to="/support">Support</Link>
+                            <Tooltip id="support" />
+                        </li>
+                        <li>
+                        <div
+                        data-tooltip-id="darkmode"
+                        data-tooltip-content="Click to change theme"
+                        data-tooltip-place="top">
+                        <DarkMode                                              
+                        />
+                        </div>
+                        <Tooltip id="darkmode" />
                         </li>
                     </ul>
                     </div>
