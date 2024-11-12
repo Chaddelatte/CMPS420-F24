@@ -3,6 +3,8 @@ import App from './App.tsx';
 import FAQ from './Routes/FAQ/FAQ.tsx';
 import Generator from './Routes/Generator/Generator.tsx';
 import Results from './Routes/Results/Results.tsx';
+
+
 export const ROUTES = {
     Dashboard: {
         path: '/',

@@ -1,7 +1,7 @@
 ﻿/* Ensure the navbar spans the full width, is centered, and has an oval shape */
 .app-container {
     padding-top: 1rem; /* Space at the top */
-    background-color: #edefeb;
+    /*background-color: #edefeb;*/
 }
 
 .custom-navbar {

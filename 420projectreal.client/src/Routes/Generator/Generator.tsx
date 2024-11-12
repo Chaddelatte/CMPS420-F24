@@ -42,6 +42,8 @@ const Generator: React.FC = () => {
                             type="text"
                             placeholder="Actors"
                             className="form-input"
+                            alt="Type in names of actors and actresses here"
+                            
                             value={actors}
                             onChange={(e) => setActors(e.target.value)}
                         />
@@ -49,6 +51,7 @@ const Generator: React.FC = () => {
                             type="text"
                             placeholder="Genre"
                             className="form-input"
+                            alt="Type in genre types here"
                             value={genre}
                             onChange={(e) => setGenre(e.target.value)}
                         />
@@ -57,12 +60,14 @@ const Generator: React.FC = () => {
                         type="text"
                         placeholder="Director"
                         className="form-input full-width"
+                        alt="Type in a director(s) name"
                         value={director}
                         onChange={(e) => setDirector(e.target.value)}
                     />
                     <textarea
                         placeholder="Enter your movie summary!"
                         className="form-textarea"
+                        //alt="Type a movie summary to give AI more direction"                        
                         value={summary}
                         onChange={(e) => setSummary(e.target.value)}
                     ></textarea>

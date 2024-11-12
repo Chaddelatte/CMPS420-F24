@@ -1,17 +1,19 @@
 import React from 'react';
 import { FaLightbulb, FaChartLine, FaComments } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const MainPage: React.FC = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', color: '#333', minHeight: '100%', display: 'flex', flexDirection: 'column' }}>
             {/* Header Section */}
-            <section
+            
+            <section className='header'
                 style={{
                     width: '100vw',
                     marginLeft: 'calc(50% - 50vw)',
                     padding: '1rem',
                     textAlign: 'center',
-                    backgroundColor: '#edefeb',
+                    //backgroundColor: '#edefeb',
                     flex: '1',
                     display: 'flex',
                     flexDirection: 'column',
@@ -20,32 +22,37 @@ const MainPage: React.FC = () => {
                 }}
             >
                 <div style={{ maxWidth: '600px', paddingTop: '80px' }}>
-                    <h1 style={{ fontSize: '2.5rem', color: '#222', marginBottom: '1rem', fontWeight: 'bold' }}>
+                    <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', fontWeight: 'bold' }}>
                         Where You Get Into The Director's Seat
                     </h1>
+                    <Link to="./generate">
                     <button
+                        className="btn btn-primary"
                         style={{
                             fontWeight: 'bold',
                             padding: '0.5rem 1.5rem',
                             borderRadius: '20px',
                             transition: 'all 0.2s ease-in-out',
                         }}
-                        onMouseOver={(e) => {
-                            e.currentTarget.style.backgroundColor = 'black';
-                            e.currentTarget.style.color = 'white';
-                        }}
-                        onMouseOut={(e) => {
-                            e.currentTarget.style.backgroundColor = '';
-                            e.currentTarget.style.color = '';
-                        }}
+                        // onMouseOver={(e) => {
+                        //     e.currentTarget.style.backgroundColor = 'black';
+                        //     e.currentTarget.style.color = 'white';
+                        // }}
+                        // onMouseOut={(e) => {
+                        //     e.currentTarget.style.backgroundColor = '';
+                        //     e.currentTarget.style.color = '';
+                        // }}
+                        
                     >
-                        Start now
-                    </button>
+                        Generate!
+                    </button></Link>
+
+                    
                 </div>
             </section>
 
             {/* Features Section */}
-            <section
+            <section 
                 style={{
                     width: '100vw',
                     marginLeft: 'calc(50% - 50vw)',
@@ -53,7 +60,7 @@ const MainPage: React.FC = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     gap: '2rem',
-                    backgroundColor: 'white',
+                    /*backgroundColor: 'white',*/
                     textAlign: 'center',
                     position: 'relative',
                     flex: '1',
@@ -81,11 +88,12 @@ const MainPage: React.FC = () => {
             </section>
 
             {/* Footer Section */}
-            <section
+            <section className = 'Footer'
                 style={{
                     width: '100vw',
                     marginLeft: 'calc(50% - 50vw)',
                     padding: '3rem 0',
+                    
                     backgroundColor: '#fff7e4',
                     textAlign: 'center',
                     display: 'flex',
@@ -105,9 +113,10 @@ const MainPage: React.FC = () => {
                 >
                     {['Title', 'Rating', 'Box Office', 'Summary'].map((title, index) => (
                         <div
-                            key={index}
+                        className='BoxDiv'    
+                        key={index}
                             style={{
-                                backgroundColor: '#fff',
+                                //backgroundColor: '#fff',
                                 borderRadius: '10px',
                                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                                 padding: '1rem',
@@ -128,7 +137,7 @@ const MainPage: React.FC = () => {
                     ))}
                 </div>
 
-                <div
+                {/* <div
                     style={{
                         marginTop: '2rem',
                         display: 'flex',
@@ -177,7 +186,7 @@ const MainPage: React.FC = () => {
                     >
                         Post to Social Media
                     </button>
-                </div>
+                </div> */}
             </section>
         </div>
     );
