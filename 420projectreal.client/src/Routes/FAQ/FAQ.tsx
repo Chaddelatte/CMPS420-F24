@@ -1,4 +1,5 @@
 import React from 'react';
+import { Tooltip } from 'react-tooltip';
 
 const FAQ: React.FC = () => {
     return (
@@ -41,17 +42,6 @@ const FAQ: React.FC = () => {
                         In the bottom right of the first box to appear on the results page, there are little social media icons. Upon clicking, they will allow a user to share their results. Clicking in the top right of the navigation bar will also allow you to share these results.
                     </p>
                 </div>
-            </div>
-
-            <div style={{
-                width: '100vw',
-                marginLeft: 'calc(50% - 50vw)',
-                backgroundColor: 'white',
-                padding: '2rem',
-                borderRadius: '8px',
-                marginTop: '3rem',
-                textAlign: 'center'
-            }}>
                 <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Still Need Help?</h2>
                 <form style={{
                     display: 'flex',
@@ -67,6 +57,9 @@ const FAQ: React.FC = () => {
                         marginBottom: '1rem'
                     }}>
                         <input
+                            data-tooltip-id="name"
+                            data-tooltip-content="Please enter a name we can use to contact you"
+                            data-tooltip-place="top"
                             type="text"
                             name="name"
                             placeholder="Name"
@@ -79,7 +72,11 @@ const FAQ: React.FC = () => {
                                 outline: 'none'
                             }}
                         />
+                        <Tooltip id="name" />
                         <input
+                            data-tooltip-id="email"
+                            data-tooltip-content="Please enter a valid email to contact you at."
+                            data-tooltip-place="top"
                             type="email"
                             name="email"
                             placeholder="E-Mail"
@@ -92,8 +89,12 @@ const FAQ: React.FC = () => {
                                 outline: 'none'
                             }}
                         />
+                        <Tooltip id="email" />
                     </div>
                     <textarea
+                        data-tooltip-id="issue"
+                        data-tooltip-content="Enter detailed information. More the better!"
+                        data-tooltip-place="top"
                         name="issue"
                         placeholder="What are you experiencing problems with?"
                         style={{
@@ -107,7 +108,12 @@ const FAQ: React.FC = () => {
                             outline: 'none'
                         }}
                     ></textarea>
-                    <button type="submit" style={{
+                    <Tooltip id="issue" />
+                    <button type="submit" 
+                        data-tooltip-id="submit"
+                        data-tooltip-content="Send a message to support"
+                        data-tooltip-place="top"
+                        style={{
                         fontWeight: 'bold',
                         padding: '0.5rem 1.5rem',
                         borderRadius: '20px',
@@ -127,8 +133,10 @@ const FAQ: React.FC = () => {
                         }}>
                         Submit
                     </button>
+                    <Tooltip id="submit" />
                 </form>
             </div>
+
         </div>
     );
 };

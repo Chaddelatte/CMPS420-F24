@@ -2,3 +2,4 @@ C:\Users\eachr\source\repos\420projectreal\420projectreal.client\obj\Debug\420pr
 C:\Users\eachr\OneDrive\Desktop\Projects\420project\420projectreal.client\obj\Debug\420projectreal.client.esproj.CoreCompileInputs.cache
 C:\Users\eachr\OneDrive\Desktop\Projects\CMPS420-F24\420projectreal.client\obj\Debug\420projectreal.client.esproj.CoreCompileInputs.cache
 C:\Users\eachr\OneDrive\Desktop\Programs\CMPS420-F24\420projectreal.client\obj\Debug\420projectreal.client.esproj.CoreCompileInputs.cache
+T:\CMPS420\CMPS420-F24\Repo\420projectreal.client\obj\Debug\420projectreal.client.esproj.CoreCompileInputs.cache
