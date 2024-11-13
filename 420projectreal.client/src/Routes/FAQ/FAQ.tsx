@@ -72,6 +72,7 @@ const FAQ: React.FC = () => {
                                 borderRadius: '8px',
                                 outline: 'none'
                             }}
+                            required
                         />
                         <Tooltip id="name" />
                         <input
@@ -89,6 +90,7 @@ const FAQ: React.FC = () => {
                                 borderRadius: '8px',
                                 outline: 'none'
                             }}
+                            required
                         />
                         <Tooltip id="email" />
                     </div>
@@ -108,6 +110,7 @@ const FAQ: React.FC = () => {
                             minHeight: '100px',
                             outline: 'none'
                         }}
+                        required
                     ></textarea>
                     <Tooltip id="issue" />
                     <button type="submit" 
