@@ -16,3 +16,9 @@
 /.vs/420projectreal/DesignTimeBuild/.dtbcache.v2
 /.vs/420projectreal/v17/.futdcache.v2
 /.vs/420projectreal/v17/.suo
+*.vsidx
+/420projectreal.Server/obj/Debug/net8.0/420projectreal.Server.AssemblyInfo.cs
+/420projectreal.Server/obj/Debug/net8.0/420projectreal.Server.AssemblyInfoInputs.cache
+/.vs/ProjectEvaluation/420projectreal.metadata.v7.bin
+/.vs/ProjectEvaluation/420projectreal.projects.v7.bin
+/.vs/420projectreal/v17/DocumentLayout.json
