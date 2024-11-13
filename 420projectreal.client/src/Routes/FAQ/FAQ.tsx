@@ -43,7 +43,8 @@ const FAQ: React.FC = () => {
                     </p>
                 </div>
                 <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Still Need Help?</h2>
-                <form style={{
+                <form action="https://formspree.io/f/movqwwlo"
+                    method="POST" style={{
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
