@@ -1,40 +1,38 @@
 import React, { useState } from 'react';
+import { callHuggingFaceAPI } from '../../apiService';
 import './Generator.css';
 
 const Generator: React.FC = () => {
-    const [actors, setActors] = useState("");
-    const [genre, setGenre] = useState("");
-    const [director, setDirector] = useState("");
-    const [summary, setSummary] = useState("");
-    const [result, setResult] = useState({ title: "", rating: "", box_office: "", summary: "" });
+    const [actors, setActors] = useState('');
+    const [genre, setGenre] = useState('');
+    const [director, setDirector] = useState('');
+    const [summary, setSummary] = useState('');
+    const [result, setResult] = useState({ title: '', rating: '', box_office: '', summary: '' });
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
     const handleGenerate = async (e: React.FormEvent) => {
         e.preventDefault();
+        setLoading(true);
+        setError('');
 
-        const response = await fetch("http://127.0.0.1:5000/generate", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ actors, genre, director, summary })
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            setResult(data);
-        } else {
-            console.error("Error generating text");
+        try {
+            const generatedResult = await callHuggingFaceAPI(actors, genre, director, summary);
+            setResult(generatedResult);
+        } catch (err: any) {
+            setError(err.message);
+            setResult({ title: '', rating: '', box_office: '', summary: '' });
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
         <div className="generator-container">
-            {/* Header Section */}
             <div className="generator-header">
                 <h3 className="generator-title">Generator</h3>
             </div>
 
-            {/* Form Section */}
             <div className="form-section">
                 <form className="generator-form" onSubmit={handleGenerate}>
                     <div className="form-group">
@@ -42,7 +40,6 @@ const Generator: React.FC = () => {
                             type="text"
                             placeholder="Actors"
                             className="form-input"
-                            alt="Type in names of actors and actresses here"                            
                             value={actors}
                             onChange={(e) => setActors(e.target.value)}
                             required
@@ -51,7 +48,6 @@ const Generator: React.FC = () => {
                             type="text"
                             placeholder="Genre"
                             className="form-input"
-                            alt="Type in genre types here"
                             value={genre}
                             onChange={(e) => setGenre(e.target.value)}
                             required
@@ -61,7 +57,6 @@ const Generator: React.FC = () => {
                         type="text"
                         placeholder="Director"
                         className="form-input full-width"
-                        alt="Type in a director(s) name"
                         value={director}
                         onChange={(e) => setDirector(e.target.value)}
                         required
@@ -69,16 +64,22 @@ const Generator: React.FC = () => {
                     <textarea
                         placeholder="(Optional) Enter your movie summary!"
                         className="form-textarea"
-                        //alt="Type a movie summary to give AI more direction"                        
                         value={summary}
                         onChange={(e) => setSummary(e.target.value)}
                     ></textarea>
-                    <button type="submit" className="generate-button">Generate</button>
+                    <button type="submit" className="generate-button" disabled={loading}>
+                        {loading ? 'Generating...' : 'Generate'}
+                    </button>
                 </form>
             </div>
 
-            {/* Display the Generated Result */}
-            {result.title && (
+            {error && (
+                <div className="error-message">
+                    <p>{error}</p>
+                </div>
+            )}
+
+            {result.title && !error && (
                 <section className="generator-footer">
                     <div className="footer-card">
                         <h5 className="footer-title">Title</h5>
@@ -95,10 +96,6 @@ const Generator: React.FC = () => {
                     <div className="footer-card">
                         <h5 className="footer-title">Summary</h5>
                         <p>{result.summary}</p>
-                    </div>
-                    <div className="footer-actions">
-                        <button className="footer-btn regenerate-btn">Regenerate</button>
-                        <button className="footer-btn share-btn">Post to Social Media</button>
                     </div>
                 </section>
             )}

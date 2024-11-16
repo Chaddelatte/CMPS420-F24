@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("420projectreal.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81e47b3756138a23a0c92b10dc217607570563d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6527b82f7d873c0d19ab1858dc6d1eb604fbcc4")]
 [assembly: System.Reflection.AssemblyProductAttribute("420projectreal.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("420projectreal.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

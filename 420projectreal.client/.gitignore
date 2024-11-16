@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 *.vsidx
+
+# Environment files
+.env

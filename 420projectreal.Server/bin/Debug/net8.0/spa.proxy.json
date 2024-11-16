@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "T:\\CMPS420\\CMPS420-F24\\Repo\\420projectreal.Server\\..\\420projectreal.client",
+"WorkingDirectory": "C:\\Users\\eachr\\OneDrive\\Desktop\\Projects\\420\\CMPS420-F24\\420projectreal.Server\\..\\420projectreal.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }
