@@ -6,24 +6,45 @@ const Generator: React.FC = () => {
     const [genre, setGenre] = useState("");
     const [director, setDirector] = useState("");
     const [summary, setSummary] = useState("");
-    const [result, setResult] = useState({ title: "", rating: "", box_office: "", summary: "" });
+    const [result, setResult] = useState({ title: "", rating: "", box_office: "", summary: "", poster: "" });
 
     const handleGenerate = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        const response = await fetch("http://127.0.0.1:5000/generate", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ actors, genre, director, summary })
-        });
+        try {
+            // Fetch movie details
+            const response = await fetch("http://127.0.0.1:5000/generate", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ actors, genre, director, summary })
+            });
 
-        if (response.ok) {
-            const data = await response.json();
-            setResult(data);
-        } else {
-            console.error("Error generating text");
+            if (response.ok) {
+                const data = await response.json();
+                setResult(data);
+
+                // Fetch poster image with the generated title
+                const posterResponse = await fetch("http://127.0.0.1:5000/generate_poster", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ prompt: `A movie poster for the film titled "${data.title}" with actors: ${actors}, genre: ${genre}, directed by: ${director}.` })
+                });
+
+                if (posterResponse.ok) {
+                    const posterData = await posterResponse.json();
+                    setResult(prevResult => ({ ...prevResult, poster: posterData.image_url }));
+                } else {
+                    console.error("Error generating poster");
+                }
+            } else {
+                console.error("Error generating text");
+            }
+        } catch (error) {
+            console.error("Error:", error);
         }
     };
 
@@ -96,6 +117,12 @@ const Generator: React.FC = () => {
                         <h5 className="footer-title">Summary</h5>
                         <p>{result.summary}</p>
                     </div>
+                    {result.poster && (
+                        <div className="footer-card">
+                            <h5 className="footer-title">Poster</h5>
+                            <img src={result.poster} alt="Generated Poster" className="poster-image" />
+                        </div>
+                    )}
                     <div className="footer-actions">
                         <button className="footer-btn regenerate-btn">Regenerate</button>
                         <button className="footer-btn share-btn">Post to Social Media</button>
