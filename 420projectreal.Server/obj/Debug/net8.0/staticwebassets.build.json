@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "gHXjdFOM4gjA3FPmz1oox9WFvKN+z1YqGCL72qxa22Q=",
+  "Hash": "4uZvC8/2GvxuX4kSjEifXjeOfJEb5EhfB0pYxlK3808=",
   "Source": "420projectreal.Server",
   "BasePath": "_content/420projectreal.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\eachr\\OneDrive\\Desktop\\Projects\\420\\CMPS420-F24\\420projectreal.client\\420projectreal.client.esproj",
+      "Identity": "T:\\CMPS420\\CMPS420-F24\\Repo\\420projectreal.client\\420projectreal.client.esproj",
       "Version": 2,
       "Source": "420projectreal.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

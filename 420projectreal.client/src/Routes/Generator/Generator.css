@@ -90,12 +90,16 @@
     max-width: 200px;
     text-align: center;
     margin: 1rem;
+    color:#000;
 }
 
 .footer-title {
     font-size: 1.25rem;
     font-weight: bold;
+    color:#000;
 }
+
+
 
 .footer-actions {
     display: flex;

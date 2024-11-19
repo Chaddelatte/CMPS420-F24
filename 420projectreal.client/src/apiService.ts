@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiKey = import.meta.env.VITE_HUGGINGFACE_API_KEY;
+const apiKey = `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`;
 
 export const callHuggingFaceAPI = async (
     actors: string,
@@ -10,37 +10,41 @@ export const callHuggingFaceAPI = async (
 ): Promise<{ title: string; rating: string; box_office: string; summary: string }> => {
     try {
         // Refined prompt for explicit structured output
-        const prompt = `
-            You are a movie idea generator. Respond strictly in the following format:
-            Title: [Movie Title]
-            Rating: [Rating out of 10]
-            Box Office: [Estimated box office earnings]
-            Summary: [Detailed summary]
+        const prompt = `Create a movie using the following details: Actors: ${actors}, Genre: ${genre}, Director: ${director},Summary: ${summary || "No summary provided."} 
+        Suggest a new movie name, Box office worth, Rating, and a plot`;
 
-            Inputs:
-            Actors: ${actors}
-            Genre: ${genre}
-            Director: ${director}
-            Summary: ${summary || "No summary provided."}
-
-            IMPORTANT: Do not add any extra commentary or repeat the input. Only output in the specified format.
-        `;
-
-        console.log('API Request Prompt:', prompt);
+       //onsole.log('API Request Prompt:', prompt);
 
         // Make the API request to Hugging Face
         const response = await axios.post(
             'https://api-inference.huggingface.co/models/meta-llama/Llama-3.2-1B',
-            { inputs: prompt },
+            {
+                inputs: 'count to 10',
+                //max_tokens: 10240000,
+               // messages: {
+                    role: "system",
+                    content: "You are a Movie director.",
+
+                
+                //},
+            },
+
             {
                 headers: {
                     Authorization: `Bearer ${apiKey}`,
                     'Content-Type': 'application/json',
+                    //max_tokens: 1024,
+                    //timeout: 30,
+                    //model: 'llama-3',
+                    //stream: true,
                 },
-            }
+
+            },
+
+
         );
 
-        console.log('Raw API Response:', response.data);
+        //console.log('Raw API Response:', response.data);
 
         // Extract the generated text from the response
         const generatedText = response.data?.[0]?.generated_text || '';
@@ -48,6 +52,9 @@ export const callHuggingFaceAPI = async (
         if (!generatedText) {
             throw new Error('The API returned an empty response.');
         }
+
+       // console.log(response.data?.[0]?.generated_text);
+        //console.log(response);
 
         // Parse the response to extract structured fields
         const titleMatch = generatedText.match(/Title:\s*(.+)/i);
