@@ -42,7 +42,7 @@ const FAQ: React.FC = () => {
                         In the bottom right of the first box to appear on the results page, there are little social media icons. Upon clicking, they will allow a user to share their results. Clicking in the top right of the navigation bar will also allow you to share these results.
                     </p>
                 </div>
-                <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Still Need Help?</h2>
+                <h2 style={{ color:"black",fontSize: '2rem', marginBottom: '1.5rem' }}>Still Need Help?</h2>
                 <form action="https://formspree.io/f/movqwwlo"
                     method="POST" style={{
                     display: 'flex',
