@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "C:\\Users\\clebl\\Source\\Repos\\CMPS420-F24\\420projectreal.Server\\..\\420projectreal.client",
+"WorkingDirectory": "C:\\Users\\moeby\\CMPS420-F24\\420projectreal.Server\\..\\420projectreal.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

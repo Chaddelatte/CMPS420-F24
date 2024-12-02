@@ -122,3 +122,12 @@
     background-color: #6c757d;
     color: #fff;
 }
+
+/* Poster Image Styling */
+.poster-image {
+    align: center;
+    display: block;
+    margin: 2rem auto 0;
+    width: 500px; /* Set the width in pixels */
+    height: auto; /* Maintain aspect ratio */
+}
