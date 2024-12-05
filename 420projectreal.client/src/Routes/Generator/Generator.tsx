@@ -23,6 +23,7 @@ const Generator: React.FC = () => {
             if (response.ok) {
                 const data = await response.json();
                 setResult(data);
+                sessionStorage.setItem("movieResult", JSON.stringify(data));
 
                 const posterResponse = await fetch("http://127.0.0.1:5000/generate_poster", {
                     method: "POST",
@@ -34,7 +35,9 @@ const Generator: React.FC = () => {
 
                 if (posterResponse.ok) {
                     const posterData = await posterResponse.json();
-                    setResult(prevResult => ({ ...prevResult, poster: posterData.image_url }));
+                    const updatedResult = { ...data, poster: posterData.image_url };
+                    setResult(updatedResult);
+                    sessionStorage.setItem("movieResult", JSON.stringify(updatedResult)); // Update sessionStorage with poster
 
                     // Update Open Graph metadata
                     document.querySelector('meta[property="og:title"]')?.setAttribute("content", data.title);
