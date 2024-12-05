@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
 
 const Results: React.FC = () => {
     const location = useLocation();
-    const { title, rating, box_office, summary } = location.state || {};
+    const [cachedResult, setCachedResult] = useState<unknown>(null);
+
+    useEffect(() => {
+        const storedResult = sessionStorage.getItem("movieResult");
+        if (storedResult) {
+            setCachedResult(JSON.parse(storedResult));
+        }
+    }, []);
+
+    const { title, rating, box_office, summary, poster } = cachedResult || location.state || {};
+
+    const handleShare = () => {
+        if (poster) {
+            FB.ui({
+                method: 'share',
+                href: poster,
+                quote: ''
+            });
+        } else {
+            console.error("No poster to share");
+        }
+    };
 
     return (
         <div style={{ fontFamily: "'Inter Tight', sans-serif", padding: '1rem', maxWidth: '800px', margin: '0 auto' }}>
@@ -29,6 +50,13 @@ const Results: React.FC = () => {
                 <div style={{ flex: 1, fontSize: '1rem' }}>{summary || "No summary available"}</div>
             </div>
 
+            {poster && (
+                <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                    <h3 style={{ fontWeight: 'bold' }}>Poster</h3>
+                    <img src={poster} alt="Movie Poster" style={{ maxWidth: '100%', height: 'auto', borderRadius: '10px' }} />
+                </div>
+            )}
+
             <section style={{ textAlign: 'center', marginBottom: '2rem' }}>
                 <Link to="/generate">
                     <button
@@ -47,6 +75,21 @@ const Results: React.FC = () => {
                     </button>
                     <Tooltip id="regenerate" />
                 </Link>
+            </section>
+
+            <section style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                <button
+                    onClick={handleShare}
+                    className="footer-btn share-btn"
+                    style={{
+                        fontWeight: 'bold',
+                        padding: '0.5rem 1.5rem',
+                        borderRadius: '20px',
+                        transition: 'all 0.2s ease-in-out',
+                    }}
+                >
+                    Post to Social Media
+                </button>
             </section>
         </div>
     );

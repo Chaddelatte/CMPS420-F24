@@ -13,6 +13,7 @@ app = Flask(__name__)
 CORS(app)
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
+fb_app_secret = os.getenv("FBAPPSECRET")
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -27,14 +28,14 @@ def generate_text():
     prompt = (
         f"You are a project manager for movies with access to all IMDb movie records. Generate an IMDb title, rating, "
         f"and box office income based on the following details. Provide an explanation of the movie's performance "
-        f"and offer suggestions for improvement.\n\n"
+        f", offer suggestions for improvement, and expand on the summary provided, limit the summary to 250 chars max 150 minimum and give the box offis in $s.\n\n"
         f"Actors: {actors}\nGenre: {genre}\nDirector: {director}\nSummary: {summary}\n\n"
         f"Return the results as JSON with fields: title, rating, box_office, and summary."
     )
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-4",
+            model="gpt-4o",
             messages=[{"role": "user", "content": prompt}]
         )
         gpt_response = response.choices[0].message['content']
