@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tooltip } from 'react-tooltip';
+import ReactPlayer from 'react-player/youtube'
 
 const FAQ: React.FC = () => {
     return (
@@ -42,6 +43,7 @@ const FAQ: React.FC = () => {
                         In the bottom right of the first box to appear on the results page, there are little social media icons. Upon clicking, they will allow a user to share their results. Clicking in the top right of the navigation bar will also allow you to share these results.
                     </p>
                 </div>
+                <center><ReactPlayer url='https://youtu.be/sZRHxKt7FUM' muted={true} playing={true} /></center>
                 <h2 style={{ color:"black",fontSize: '2rem', marginBottom: '1.5rem' }}>Still Need Help?</h2>
                 <form action="https://formspree.io/f/movqwwlo"
                     method="POST" style={{
