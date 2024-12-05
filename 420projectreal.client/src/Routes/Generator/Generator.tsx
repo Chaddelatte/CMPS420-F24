@@ -37,6 +37,11 @@ const Generator: React.FC = () => {
                 if (posterResponse.ok) {
                     const posterData = await posterResponse.json();
                     setResult(prevResult => ({ ...prevResult, poster: posterData.image_url }));
+
+                    // Update Open Graph metadata
+                    document.querySelector('meta[property="og:title"]')?.setAttribute("content", data.title);
+                    document.querySelector('meta[property="og:description"]')?.setAttribute("content", data.summary);
+                    document.querySelector('meta[property="og:image"]')?.setAttribute("content", posterData.image_url);
                 } else {
                     console.error("Error generating poster");
                 }
@@ -45,6 +50,18 @@ const Generator: React.FC = () => {
             }
         } catch (error) {
             console.error("Error:", error);
+        }
+    };
+
+    const handleShare = () => {
+        if (result.poster) {
+            FB.ui({
+                method: 'share',
+                href: result.poster, // Share the poster URL
+                quote: '' // Include an empty quote
+            });
+        } else {
+            console.error("No poster to share");
         }
     };
 
@@ -90,7 +107,6 @@ const Generator: React.FC = () => {
                     <textarea
                         placeholder="(Optional) Enter your movie summary!"
                         className="form-textarea"
-                        //alt="Type a movie summary to give AI more direction"                        
                         value={summary}
                         onChange={(e) => setSummary(e.target.value)}
                     ></textarea>
@@ -125,7 +141,7 @@ const Generator: React.FC = () => {
                     )}
                     <div className="footer-actions">
                         <button className="footer-btn regenerate-btn">Regenerate</button>
-                        <button className="footer-btn share-btn">Post to Social Media</button>
+                        <button className="footer-btn share-btn" onClick={handleShare}>Post to Social Media</button>
                     </div>
                 </section>
             )}
