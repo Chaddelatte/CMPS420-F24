@@ -1,4 +1,6 @@
-1. Open VScode
+
+
+. Open VScode
 2. cd "something/something/something/420projectreal.Server"
 3. Create .env file in "420projectreal.Server" file 
 4. Paste OPENAI_API_KEY="insert your api key here"
@@ -15,3 +17,5 @@ INFO:werkzeug:Press CTRL+C to quit
 7. Go into visual studio, click the run button
 8. Localhost should open, redirect to our page from swagger
 9. Enter actual data into the generator otherwise a 500 error will be thrown
+ 
+test
