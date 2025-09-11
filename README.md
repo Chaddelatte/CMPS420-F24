@@ -1,6 +1,4 @@
-
-
-. Open VScode
+1. Open VScode
 2. cd "something/something/something/420projectreal.Server"
 3. Create .env file in "420projectreal.Server" file 
 4. Paste OPENAI_API_KEY="insert your api key here"
